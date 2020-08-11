@@ -68,8 +68,8 @@ const data = {
   }],
   total_count: 32131
 }
-cachedUserRepos = data.items
-cachedUserStaredRepos = data.items
+// cachedUserRepos = data.items
+// cachedUserStaredRepos = data.items
 function Index({ userRepos = cachedUserRepos, userStaredRepos = cachedUserStaredRepos, user, withRouter = {}, router }) {
   const tabKey = router.query.key || '1'
   const handleTabChange = (activeKey) => {

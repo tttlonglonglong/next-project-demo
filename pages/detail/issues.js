@@ -250,11 +250,11 @@ Issues.getInitialProps = async ({ ctx }) => {
   const full_name = `${owner}/${name}`
   const fetchs = await Promise.all([
     await api.request({
-      url: `/ repos / ${owner} / ${name} / issues`
+      url: `/repos/${owner}/${name}/issues`
     }, ctx.req, ctx.res),
-    CACHE[full_name] ? Promise.resolve(data: CACHE[full_name]) :
+    CACHE[full_name] ? Promise.resolve({ data: CACHE[full_name] }) :
       await api.request({
-        url: `/ repos / ${owner} / ${name} / labels`
+        url: `/repos/${owner}/${name}/labels`
       }, ctx.req, ctx.res)
   ]).catch(err => console.log('fetchs errs'))
 
